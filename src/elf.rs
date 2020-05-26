@@ -28,7 +28,7 @@ use goblin::elf::header::{self, Header};
 use goblin::elf::reloc;
 use goblin::elf::section_header::{self, SectionHeader};
 
-// interned string idx
+// interned string idx 
 type StringIndex = usize;
 // an offset into the object file
 type Offset = usize;
@@ -59,6 +59,7 @@ impl From<Architecture> for MachineTag {
             Sparc64 | Sparcv9 => EM_SPARCV9,
             Msp430 => EM_MSP430,
             Unknown => EM_NONE,
+            Spirv => panic!("spirv does not exist in ELF"),
             Hexagon => panic!("goblin does not have EM_HEXAGON yet"),
             Nvptx64 => panic!("nvptx64 does not exist in ELF"),
             AmdGcn => panic!("amdgcn does not exist in ELF"),
